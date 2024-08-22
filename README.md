@@ -55,7 +55,7 @@ Please replace #source-channel and #destination-channel with the actual channel 
 ## Requirements
 
 - Python 3.8 or higher
-- Discord API Token
+- Discord API Token | [Discord Developer Portal](https://discord.com/developers)
 - Discord.py library
 
 ## Installation
@@ -71,8 +71,8 @@ Please replace #source-channel and #destination-channel with the actual channel 
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/Nimiates/discord-channel-merge-bot.git
-   
+   ORIGINAL | git clone https://github.com/Nimiates/discord-channel-merge-bot.git
+   THIS GIT | git clone https://github.com/SparksSkywere/discord-channel-merge-bot.git
 2. **Change to the project directory**:
 
 `cd discord-channel-merge-bot`
