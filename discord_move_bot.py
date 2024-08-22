@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Set up the bot with necessary permissions (intents)
-intents = discord.Intents.default() 
+intents = discord.Intents.default()
 intents.message_content = True  # Enable message content intent to read messages
 bot = commands.Bot(command_prefix='!', intents=intents)  # Initialize the bot with a command prefix
 
@@ -81,7 +81,8 @@ async def move_messages(
     # Move messages to the target channel in reverse order to maintain original order
     for message in reversed(messages):
         attachments = [await attachment.to_file() for attachment in message.attachments]
-        await channel_to.send(content=f"{message.author.display_name}: {message.content}", files=attachments)
+        author_info = f"{message.author.display_name} ({message.author}):"
+        await channel_to.send(content=f"{author_info}\n{message.content}", files=attachments)
         await message.delete()  # Delete the original message from the source channel
 
     # Notify the user how many messages were moved
