@@ -19,11 +19,11 @@ You can also join our NIM community on Discord, Reddit, and Facebook, or visit o
 ## Commands
 The bot provides commands to move messages between channels. Here's how to use them:
 
-`!move #Channel-x #Channel-y`: Moves all messages from Channel-x to Channel-y. This is the default action if no additional parameters are provided.
+`/move #Channel-x #Channel-y`: Moves all messages from Channel-x to Channel-y. This is the default action if no additional parameters are provided.
 
-`!move #Channel-x #Channel-y -last "7 days"`: Moves messages from Channel-x to Channel-y that were sent in the last specified time period (e.g., "7 days" or "1 hour").
+`/move #Channel-x #Channel-y -last "7 days"`: Moves messages from Channel-x to Channel-y that were sent in the last specified time period (e.g., "7 days" or "1 hour").
 
-`!move #Channel-x #Channel-y -from_user @username`: Moves all messages sent by a specific user from Channel-x to Channel-y.
+`/move #Channel-x #Channel-y -from_user @username`: Moves all messages sent by a specific user from Channel-x to Channel-y.
 
 ## Parameters
 `#Channel-x`: Mention of the source channel where messages will be moved from.
@@ -33,13 +33,13 @@ The bot provides commands to move messages between channels. Here's how to use t
 
 ## Examples
 To move all messages from one channel to another:
-`!move #source-channel #destination-channel`
+`/move #source-channel #destination-channel`
 
 To move messages from the last 7 days:
-`!move #source-channel #destination-channel -last "7 days"`
+`/move #source-channel #destination-channel -last "7 days"`
 
 To move messages from a specific user:
-`!move #source-channel #destination-channel -from_user @User`
+`/move #source-channel #destination-channel -from_user @User`
 
 Please replace #source-channel and #destination-channel with the actual channel mentions, and @User with the mention of the user whose messages you want to move.
 
@@ -114,10 +114,10 @@ To learn more about running and managing Discord bots, read the official [Discor
 
 Join our NIM community on Discord, Reddit, and Facebook, or visit our homepage:
 
-[![Join our Discord](https://img.shields.io/badge/Discord-Join-blue)](https://discord.com/invite/SVYMhKpCAb)
-[![Visit our Homepage](https://img.shields.io/badge/Homepage-Visit-orange)](https://nimiates.org)
-[![Visit our Reddit](https://img.shields.io/badge/Reddit-Visit-red)](https://www.reddit.com/r/nimiates/)
-[![Visit our Facebook](https://img.shields.io/badge/Facebook-Visit-blue)](https://www.facebook.com/groups/nimiates/)
+[/[Join our Discord](https://img.shields.io/badge/Discord-Join-blue)](https://discord.com/invite/SVYMhKpCAb)
+[/[Visit our Homepage](https://img.shields.io/badge/Homepage-Visit-orange)](https://nimiates.org)
+[/[Visit our Reddit](https://img.shields.io/badge/Reddit-Visit-red)](https://www.reddit.com/r/nimiates/)
+[/[Visit our Facebook](https://img.shields.io/badge/Facebook-Visit-blue)](https://www.facebook.com/groups/nimiates/)
 
 ## License
 This project is licensed under the MIT License.
