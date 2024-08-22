@@ -67,7 +67,11 @@ async def move_messages(
             try:
                 number, unit = time_period.split()
                 number = int(number)
-                delta = timedelta(**{unit: number})  # Create a time delta for filtering
+                # Handle singular/plural cases
+                if unit.endswith('s'):
+                    unit = unit[:-1]
+                # Create a time delta for filtering based on the parsed unit
+                delta = timedelta(**{f'{unit}s': number})
             except (ValueError, KeyError):
                 await interaction.followup.send("Invalid time period format. Use '<number> days' or '<number> hours'.")
                 return
@@ -80,13 +84,57 @@ async def move_messages(
 
     # Move messages to the target channel in reverse order to maintain original order
     for message in reversed(messages):
-        attachments = [await attachment.to_file() for attachment in message.attachments]
+        attachments = [await attachment.to_file() for attachment in message.attachments if attachment and attachment.url]
         author_info = f"{message.author.display_name} ({message.author}):"
         await channel_to.send(content=f"{author_info}\n{message.content}", files=attachments)
         await message.delete()  # Delete the original message from the source channel
 
     # Notify the user how many messages were moved
     await interaction.followup.send(f"Moved {len(messages)} messages from {channel_from.name} to {channel_to.name}.")
+
+# Define a slash command to delete messages in a channel based on a timescale
+@bot.tree.command(name="delete", description="Delete messages in a channel based on a time period.")
+@app_commands.describe(
+    channel="The channel to delete messages from.",
+    time_period="Time period to delete messages from (e.g., '7 days', '1 hour')."
+)
+async def delete_messages(
+    interaction: discord.Interaction,
+    channel: discord.TextChannel,
+    time_period: str
+):
+    """
+    Deletes messages in a channel based on a specified time period.
+
+    Arguments:
+    - channel: The channel to delete messages from.
+    - time_period: The time period to filter messages (e.g., '7 days', '1 hour').
+    """
+    await interaction.response.defer()  # Defer the response to avoid interaction timeout
+
+    try:
+        number, unit = time_period.split()
+        number = int(number)
+        # Handle singular/plural cases
+        if unit.endswith('s'):
+            unit = unit[:-1]
+        # Create a time delta for filtering based on the parsed unit
+        delta = timedelta(**{f'{unit}s': number})
+    except (ValueError, KeyError):
+        await interaction.followup.send("Invalid time period format. Use '<number> days' or '<number> hours'.")
+        return
+
+    # Calculate the cutoff time
+    cutoff_time = datetime.now() - delta
+
+    # Fetch and delete messages older than the cutoff time
+    deleted_count = 0
+    async for message in channel.history(limit=None, before=cutoff_time):
+        await message.delete()
+        deleted_count += 1
+
+    # Notify the user how many messages were deleted
+    await interaction.followup.send(f"Deleted {deleted_count} messages from {channel.name} older than {time_period}.")
 
 # Get the bot token from environment variables and start the bot
 TOKEN = os.getenv("DISCORD_TOKEN")

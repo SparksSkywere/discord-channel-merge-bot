@@ -41,6 +41,9 @@ To move messages from the last 7 days:
 To move messages from a specific user:
 `/move #source-channel #destination-channel -from_user @User`
 
+Delete after a period of time to help cleanup
+`/dele #source-channel time`
+
 Please replace #source-channel and #destination-channel with the actual channel mentions, and @User with the mention of the user whose messages you want to move.
 
 ## Requirements
