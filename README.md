@@ -14,6 +14,7 @@ You can also join our NIM community on Discord, Reddit, and Facebook, or visit o
 - Move all messages from one channel to another.
 - Move the last 'X' days of messages.
 - Move messages from specific users.
+- Delete messages from a specific time for cleanup
 - User-friendly command system.
 
 ## Commands
@@ -29,8 +30,11 @@ The bot provides commands to move messages between channels. Here's how to use t
 
 ## Parameters
 `#Channel-x`: Mention of the source channel where messages will be moved from.
+
 `#Channel-y`: Mention of the destination channel where messages will be moved to.
+
 `-last "<time_period>"`: (Optional) The time period for which messages will be moved, specified in quotes. Replace <time_period> with a value like "7 days" or "1 hour".
+
 `-from_user @username`: (Optional) The mention of the user whose messages will be moved. Replace @username with the actual user mention.
 
 ## Examples
