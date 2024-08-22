@@ -25,6 +25,8 @@ The bot provides commands to move messages between channels. Here's how to use t
 
 `/move #Channel-x #Channel-y -from_user @username`: Moves all messages sent by a specific user from Channel-x to Channel-y.
 
+`/delete #source-channel time 1 hour`: Delete after a period of time, be it 1 hour or 1 day
+
 ## Parameters
 `#Channel-x`: Mention of the source channel where messages will be moved from.
 `#Channel-y`: Mention of the destination channel where messages will be moved to.
@@ -42,7 +44,7 @@ To move messages from a specific user:
 `/move #source-channel #destination-channel -from_user @User`
 
 Delete after a period of time to help cleanup
-`/dele #source-channel time`
+`/delete #source-channel time 1 hour`
 
 Please replace #source-channel and #destination-channel with the actual channel mentions, and @User with the mention of the user whose messages you want to move.
 
