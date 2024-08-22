@@ -106,6 +106,12 @@ Please replace #source-channel and #destination-channel with the actual channel 
 
 2. **Stop the bot**: To stop the bot, press Ctrl+C in the terminal where it is running.
 
+## Discord bot setup
+
+1. Make sure when selecting options in "OAuth2" select "Bot" and "application.commands"
+
+2. Bot permissions you can select "Administrator" to save time, you may select all the manage permissions 
+
 ## Historical Data: 
 Discord only allows bots to fetch messages up to 14 days old.
 
@@ -114,10 +120,10 @@ To learn more about running and managing Discord bots, read the official [Discor
 
 Join our NIM community on Discord, Reddit, and Facebook, or visit our homepage:
 
-[/[Join our Discord](https://img.shields.io/badge/Discord-Join-blue)](https://discord.com/invite/SVYMhKpCAb)
-[/[Visit our Homepage](https://img.shields.io/badge/Homepage-Visit-orange)](https://nimiates.org)
-[/[Visit our Reddit](https://img.shields.io/badge/Reddit-Visit-red)](https://www.reddit.com/r/nimiates/)
-[/[Visit our Facebook](https://img.shields.io/badge/Facebook-Visit-blue)](https://www.facebook.com/groups/nimiates/)
+[![Join our Discord](https://img.shields.io/badge/Discord-Join-blue)](https://discord.com/invite/SVYMhKpCAb)
+[![Visit our Homepage](https://img.shields.io/badge/Homepage-Visit-orange)](https://nimiates.org)
+[![Visit our Reddit](https://img.shields.io/badge/Reddit-Visit-red)](https://www.reddit.com/r/nimiates/)
+[![Visit our Facebook](https://img.shields.io/badge/Facebook-Visit-blue)](https://www.facebook.com/groups/nimiates/)
 
 ## License
 This project is licensed under the MIT License.
