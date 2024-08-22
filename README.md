@@ -68,16 +68,19 @@ Please replace #source-channel and #destination-channel with the actual channel 
 
 ### Installation Steps
 
-1. **Clone the repository**:
+1. **Clone the repository ORIGINAL**:
 
    ```bash
-   ORIGINAL | git clone https://github.com/Nimiates/discord-channel-merge-bot.git
-   THIS GIT | git clone https://github.com/SparksSkywere/discord-channel-merge-bot.git
-2. **Change to the project directory**:
+   git clone https://github.com/Nimiates/discord-channel-merge-bot.git
+2. **Clone the repository THIS GIT**:
+
+   ```bash
+   git clone https://github.com/SparksSkywere/discord-channel-merge-bot.git
+3. **Change to the project directory**:
 
 `cd discord-channel-merge-bot`
 
-3. **Create a virtual environment**:
+4. **Create a virtual environment**:
 
 `python -m venv venv`
 
